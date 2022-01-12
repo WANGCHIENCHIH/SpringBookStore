@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+
+<table>
+
+    <tr>
+
+        <th/>
+        ISBN</th>
+        <th/>
+        BookName</th>
+        <th/>
+        AuthorName</th>
+        <th>PublishDate</th>
+
+    </tr>
+    <tr th:each="book: ${bookList}">
+        <td th:text="${book.ISBN}"/>
+        <td th:text="${book.BookName}"/>
+        <td th:text="${book.AuthorName}"/>
+        <td th:text="${book.PublishDate}"/>
+    </tr>
+
+</table>
+
+
+</body>
+</html>
