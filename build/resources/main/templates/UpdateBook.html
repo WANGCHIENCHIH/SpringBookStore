@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+
+<form action="#" th:action="@{/UpdateBook}" th:object="${book}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <p>ISBN: <input type="text" th:field="*{ISBN}" value="${book.ISBN}"/></p>
+    <p>BookName: <input type="text" th:field="*{BookName}" /></p>
+    <p>AuthorName: <input type="text" th:field="*{AuthorName}" /></p>
+    <p>BookImg: <input type="text" th:field="*{BookImg}" value="NONE"/></p>
+    <p>PublishDate: <input type="date" th:field="*{PublishDate}"  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required/></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+
+</body>
+</html>

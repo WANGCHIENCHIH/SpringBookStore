@@ -5,7 +5,7 @@
     <title>Spring Security Example </title>
 </head>
 <body>
-
+<p>Add <a th:href="@{/NewBook}">NewBook</a></p>
 <table>
 
     <tr>
@@ -20,7 +20,9 @@
 
     </tr>
     <tr th:each="book: ${bookList}">
-        <td th:text="${book.ISBN}"/>
+        <td>
+            <a th:href="@{'/Book/'+${book.id}}" th:text="${book.ISBN}"></a>
+        </td>
         <td th:text="${book.BookName}"/>
         <td th:text="${book.AuthorName}"/>
         <td th:text="${book.PublishDate}"/>
